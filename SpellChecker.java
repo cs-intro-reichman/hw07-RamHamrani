@@ -58,14 +58,16 @@ public class SpellChecker {
 
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
-		word = word.toLowerCase();
+		String editedWord = word;
+		int lowestDistance = threshold + 2; // can be any number bigger than the threshold.
 		for(int i = 0; i < dictionary.length; i++ ){
-			if (threshold > levenshtein(word, dictionary[i])) {
-				return word;
+			int distance = levenshtein(word, dictionary[i]);
+			if (distance < lowestDistance) {
+				lowestDistance = distance;
+				editedWord = dictionary[i]; 
 			}
-			else{
-
-			}
+		}
+		return editedWord;
 	}
-
 }
+
