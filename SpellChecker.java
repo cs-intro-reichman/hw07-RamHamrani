@@ -57,12 +57,12 @@ public class SpellChecker {
         // Convert the word to lowercase for case-insensitive comparison
         word = word.toLowerCase();
         String editedWord = word;
-        // Set an initial distance value greater than the threshold(doesnt matter how much bigger)
-        int lowestDistance = threshold + 2;
+        // Set an initial distance value greater than the threshold.
+        int lowestDistance = threshold + 1;
         // Iterate through the dictionary to find the closest word
         for(int i = 0; i < dictionary.length; i++ ){
             int distance = levenshtein(word, dictionary[i]);
-            // Update the edited word if a closer match is found("memorization")
+            // Update the edited word if a closer match is found( using "memorization")
             if (distance < lowestDistance) {
                 lowestDistance = distance;
                 editedWord = dictionary[i]; 
