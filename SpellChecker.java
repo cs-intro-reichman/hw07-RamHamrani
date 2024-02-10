@@ -15,6 +15,7 @@ public class SpellChecker {
     // Function to get the tail of a string
     public static String tail(String str) {
         String tailStr = "";
+       // #feedback - you can use String's substring method instead of this for loop.
         for(int i = 0; i < str.length()-1; i++) {
             // Checks if the string has more than one character
             if (str.length() > 1) {
